@@ -9,6 +9,13 @@ const app = express();
 app.use(express.json());
 app.use(requestLogger);
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Welcome to E-Commerce API',
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     success: true,
